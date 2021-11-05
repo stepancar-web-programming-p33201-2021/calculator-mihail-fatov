@@ -101,14 +101,19 @@ class Calculator extends Component {
         return (
             <div id='root'>
                 <div className='result'>
-                <input autoFocus={true} ref={this.searchInput} value={this.state.inputString} onChange={(e)=>{this.inputChange(e)}} onSubmit={()=>{this.actionCount()}}/>
+                <input style={{width: '95%'}} autoFocus={true} ref={this.searchInput} value={this.state.inputString} onChange={(e)=>{this.inputChange(e)}} onSubmit={()=>{this.actionCount()}}/>
             </div>
             <div className='buttonsSpace'>
+                
+                
                 {numButtons.map((label) => <button value={label} onClick={()=>{this.numButtonClick(label)}}>{label}</button>)}
+                
                 {actButtons.map((label) => <button value={label} onClick={()=>{this.actButtonClick(label)}}>{label}</button>)}
+                <button onClick={()=>{this.actionCount()}}>{'='}</button>
                 <button onClick={()=>{this.rmButtonClick()}}>{'<'}</button>
                 <button onClick={()=>{this.clrButtonClick()}}>{'C'}</button>
-                <button onClick={()=>{this.actionCount()}}>{'='}</button>
+                
+                
             </div>
             </div>
         )
